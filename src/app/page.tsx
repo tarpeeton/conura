@@ -1,9 +1,11 @@
 import { Banner } from "./components/Home/Banner";
+import { Rezident } from "./components/Home/Resident";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="flex flex-col gap-[60px] bg-[#FBFBFB]">
         <Banner />
+        <Rezident />
     </div>
   );
 }

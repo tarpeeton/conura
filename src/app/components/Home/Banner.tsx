@@ -1,6 +1,5 @@
 "use client"
 import { useEffect, useRef, useState } from "react"
-import Image from "next/image"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import "swiper/css"
@@ -46,7 +45,7 @@ export const Banner = () => {
 
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth < 1024)
-        handleResize() // initial check
+        handleResize() 
         window.addEventListener("resize", handleResize)
         return () => window.removeEventListener("resize", handleResize)
     }, [])
@@ -88,7 +87,7 @@ export const Banner = () => {
                                     </h1>
 
                                     <button
-                                        className="px-6 py-3 h-[50px] rounded-xl font-bold text-[15px] w-full  lg:w-max"
+                                        className="px-6 py-3 h-[50px] hover:opacity-90 rounded-xl font-bold text-[15px] w-full  lg:w-max"
                                         style={{
                                             backgroundColor: slide.buttonColor,
                                             color: slide.inButtonColor
