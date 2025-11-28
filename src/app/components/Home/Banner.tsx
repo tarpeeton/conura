@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import { Autoplay } from "swiper/modules"
 import "swiper/css"
 
 const BANNER_DATA = [
@@ -45,7 +46,7 @@ export const Banner = () => {
 
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth < 1024)
-        handleResize() 
+        handleResize()
         window.addEventListener("resize", handleResize)
         return () => window.removeEventListener("resize", handleResize)
     }, [])
@@ -57,12 +58,16 @@ export const Banner = () => {
             <div className="relative w-full lg:h-[550px] h-[520px] overflow-hidden rounded-3xl">
 
                 <Swiper
+                    modules={[Autoplay]}
                     onSwiper={(swiper) => (swiperRef.current = swiper)}
                     onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
                     slidesPerView={1}
                     speed={600}
                     spaceBetween={10}
-
+                    autoplay={{
+                        delay: 2800, 
+                        disableOnInteraction: false,
+                    }}
                     className="w-full h-full"
                 >
                     {BANNER_DATA.map((slide) => (
@@ -117,8 +122,8 @@ export const Banner = () => {
                             key={idx}
                             onClick={() => swiperRef.current?.slideTo(idx)} // shu joy qo'shildi
                             className={`h-[3px] rounded-full cursor-pointer transition-all ${activeIndex === idx
-                                    ? "w-[34px] bg-black lg:w-[50px]"
-                                    : "w-[34px] lg:w-[45px] bg-gray-300"
+                                ? "w-[34px] bg-black lg:w-[50px]"
+                                : "w-[34px] lg:w-[45px] bg-gray-300"
                                 }`}
                         ></div>
                     ))}
