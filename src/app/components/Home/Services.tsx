@@ -71,21 +71,21 @@ export const Services = () => {
             <div className="mt-[30px] lg:mt-[35px] grid grid-cols-1 lg:grid-cols-3 lg:gap-10">
                 <div className="flex flex-col">
                     {SERVICES.map((item, index) => (
-                        <div key={item.id} className="border-y border-y-[#E9E9E9]">
+                        <div key={item.id} className="border-y border-y-[#E9E9E9] lg:border-b lg:border-b-[#E9E9E9]">
 
                             {/* BUTTON */}
                             <button
-                               onClick={() => {
-    const isMobile = window.innerWidth < 1024;
+                                onClick={() => {
+                                    const isMobile = window.innerWidth < 1024;
 
-    if (isMobile) {
-        // agar mobileda bir xil elementga bosilsa — yopilsin
-        setActiveSer(prev => prev === item.id ? null : item.id);
-    } else {
-        // desktopda yopilish kerak emas
-        setActiveSer(item.id);
-    }
-}}
+                                    if (isMobile) {
+                                        // agar mobileda bir xil elementga bosilsa — yopilsin
+                                        setActiveSer(prev => prev === item.id ? null : item.id);
+                                    } else {
+                                        // desktopda yopilish kerak emas
+                                        setActiveSer(item.id);
+                                    }
+                                }}
 
                                 className="flex items-center justify-between w-full py-6 lg:py-8"
                             >

@@ -1,4 +1,5 @@
 import { Banner } from "./components/Home/Banner";
+import  HowWeWork  from "./components/Home/HowWeWork";
 import { Rezident } from "./components/Home/Resident";
 import { Services } from "./components/Home/Services";
 
@@ -8,6 +9,7 @@ export default function Home() {
         <Banner />
         <Rezident />
         <Services />
+        <HowWeWork />
     </div>
   );
 }
