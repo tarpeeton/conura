@@ -91,7 +91,7 @@ export default function HowWeWork() {
 
       <div className="mt-10 lg:mt-[60px] sticky top-20">
         <div className="flex flex-row gap-2.5 lg:gap-16 items-start lg:items-stretch ">
-          <div className='flex flex-row lg:gap-[34px]'>
+          <div className='flex flex-row lg:gap-[34px] w-full lg:w-fit'>
             <div className=" flex items-center h-full ">
               <div className="relative  mr-3.5 lg:mr-0 w-full h-[790px] lg:h-full flex  ">
                 <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-[#e0e0e0] overflow-hidden">
@@ -124,7 +124,7 @@ export default function HowWeWork() {
                 <button
                   key={step.id}
                   onClick={() => handleStepClick(step.id)}
-                  className={`text-left w-full flex flex-row gap-2.5 transition-all duration-300`}
+                  className={`text-left w-full flex flex-row gap-2.5 justify-between transition-all duration-300`}
                 >
                   <div className='w-[191px]'>
                    <h4 
